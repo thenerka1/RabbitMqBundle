@@ -25,6 +25,10 @@
     </parameters>
 
     <services>
+        <service id="OldSound\RabbitMqBundle\Command\BaseRabbitMqCommand">
+            <argument type="service" id="service_container" />
+        </service>
+        
         <service id="old_sound_rabbit_mq.data_collector" class="%old_sound_rabbit_mq.data_collector.class%">
             <argument type="collection" />
             <tag name="data_collector" template="@OldSoundRabbitMq/Collector/collector.html.twig" id="rabbit_mq" />
