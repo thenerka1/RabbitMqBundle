@@ -26,7 +26,9 @@
 
     <services>
         <service id="OldSound\RabbitMqBundle\Command\BaseRabbitMqCommand" class="OldSound\RabbitMqBundle\Command\BaseRabbitMqCommand">
-            <argument type="service" id="service_container" />
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
         </service>
         
         <service id="old_sound_rabbit_mq.data_collector" class="%old_sound_rabbit_mq.data_collector.class%">
