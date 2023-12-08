@@ -7,10 +7,8 @@ use Symfony\Component\Console\Command\Command;
 
 abstract class BaseRabbitMqCommand extends Command
 {
-    public function __construct(
-        protected ContainerInterface $container,
-    ) {
-    }
+
+    private $container;
 
     /**
      * @return ContainerInterface
@@ -18,5 +16,10 @@ abstract class BaseRabbitMqCommand extends Command
     public function getContainer()
     {
         return $this->container;
+    }
+
+    public function setContainer(ContainerInterface $container): void
+    {
+        $this->container = $container;
     }
 }
